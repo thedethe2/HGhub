@@ -28,7 +28,7 @@ jobs:
         id: ver
         shell: bash
         run: |
-          V="${GITHUB_REF_NAME#v}"
+          V=$(node -p "require('./src-tauri/tauri.conf.json').version")
           echo "version=$V" >> "$GITHUB_OUTPUT"
           node -e "const fs=require('fs');for(const p of ['src-tauri/tauri.conf.json','package.json']){const j=JSON.parse(fs.readFileSync(p));j.version=process.argv[1];fs.writeFileSync(p,JSON.stringify(j,null,2)+'\n')}" "$V"
 
@@ -81,7 +81,7 @@ jobs:
         id: ver
         shell: bash
         run: |
-          V="${GITHUB_REF_NAME#v}"
+          V=$(node -p "require('./src-tauri/tauri.conf.json').version")
           echo "version=$V" >> "$GITHUB_OUTPUT"
           node -e "const fs=require('fs');for(const p of ['src-tauri/tauri.conf.json','package.json']){const j=JSON.parse(fs.readFileSync(p));j.version=process.argv[1];fs.writeFileSync(p,JSON.stringify(j,null,2)+'\n')}" "$V"
 
@@ -190,7 +190,7 @@ jobs:
         id: ver
         shell: bash
         run: |
-          V="${GITHUB_REF_NAME#v}"
+          V=$(node -p "require('./src-tauri/tauri.conf.json').version")
           echo "version=$V" >> "$GITHUB_OUTPUT"
           node -e "const fs=require('fs');for(const p of ['src-tauri/tauri.conf.json','package.json']){const j=JSON.parse(fs.readFileSync(p));j.version=process.argv[1];fs.writeFileSync(p,JSON.stringify(j,null,2)+'\n')}" "$V"
 
@@ -250,7 +250,7 @@ jobs:
         id: ver
         shell: bash
         run: |
-          V="${GITHUB_REF_NAME#v}"
+          V=$(node -p "require('./src-tauri/tauri.conf.json').version")
           echo "version=$V" >> "$GITHUB_OUTPUT"
           node -e "const fs=require('fs');for(const p of ['src-tauri/tauri.conf.json','package.json']){const j=JSON.parse(fs.readFileSync(p));j.version=process.argv[1];fs.writeFileSync(p,JSON.stringify(j,null,2)+'\n')}" "$V"
 
@@ -318,7 +318,7 @@ jobs:
         id: ver
         shell: bash
         run: |
-          V="${GITHUB_REF_NAME#v}"
+          V=$(node -p "require('./src-tauri/tauri.conf.json').version")
           echo "version=$V" >> "$GITHUB_OUTPUT"
           node -e "const fs=require('fs');for(const p of ['src-tauri/tauri.conf.json','package.json']){const j=JSON.parse(fs.readFileSync(p));j.version=process.argv[1];fs.writeFileSync(p,JSON.stringify(j,null,2)+'\n')}" "$V"
 
